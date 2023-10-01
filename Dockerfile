@@ -1,6 +1,4 @@
 FROM openjdk:17-jdk-slim-buster
-WORKDIR /app
-COPY app/build/lib/* build/lib/
-COPY app/build/libs/app.jar build/
-WORKDIR /app/build
-ENTRYPOINT ["java", "-jar", "app.jar"]
+#FROM openjdk:8-jdk-alpine
+COPY target/spring-boot-three-1.0.jar spring-1.0.jar
+ENTRYPOINT ["java","-jar","/spring-1.0.jar"]
